@@ -8,8 +8,7 @@ const mongoose = require('mongoose')
 mongoose.set('strictQuery',false)
 
 //connecting to DataBase
-// let dbURL = "mongodb+srv://abiiRam:abii%40mongoDB002@abii.dgatpri.mongodb.net/fitness?retryWrites=true&w=majority"
-let dbURL = "mongodb://localhost:27017/fitness"
+let dbURL = "mongodb+srv://abiiRam:abii%40mongoDB002@abii.dgatpri.mongodb.net/fitness"
 mongoose.connect(dbURL ,  { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>
 {
     console.log("connected to database");
