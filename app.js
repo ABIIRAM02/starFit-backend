@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const BASE_URL = process.env.BASE_URL || 2000
+const PORT = process.env.PORT || 2000
 
 //requiring mongoose
 const mongoose = require('mongoose')
@@ -239,7 +239,7 @@ app.post('/signup', async (req, res) => {
   })
 
 //app listening to port 
-app.listen( BASE_URL , ()=>
+app.listen( PORT , ()=>
 {
-    console.log(`listening to port ${BASE_URL}`);
+    console.log(`listening to port ${PORT}`);
 } )
