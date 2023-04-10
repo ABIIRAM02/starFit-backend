@@ -190,6 +190,15 @@ app.post('/signup', async (req, res) => {
     })
   })
 
+  app.get('/userDetails' , async (req , res)=>
+  {
+    await user.find().exec()
+    .then((data)=>
+    {
+      res.send(data)
+    })
+  })
+
   app.get('/singleWorkout/:id' , async (req , res)=>
   {
     try
