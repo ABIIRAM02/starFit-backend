@@ -192,11 +192,26 @@ app.post('/signup', async (req, res) => {
 
   app.get('/userDetails' , async (req , res)=>
   {
-    await user.find().exec()
-    .then((data)=>
+    try
     {
-      res.send(data)
-    })
+      req.body.userKind == "user" 
+      ?
+      await user.find().exec()
+      .then((data)=>
+      {
+        res.send(data)
+      })
+      :
+      await trainer.find().exec()
+      .then((data)=>
+      {
+        res.send(data)
+      })
+    }
+    catch(err)
+    {
+      console.log(err);
+    }
   })
 
   app.get('/singleWorkout/:id' , async (req , res)=>
