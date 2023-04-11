@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const PORT = process.env.PORT || 2000
+const PORT = process.env.PORT || 4004
 
 //requiring mongoose
 const mongoose = require('mongoose')
@@ -190,7 +190,7 @@ app.post('/signup', async (req, res) => {
     })
   })
 
-  app.get('/userDetails' , async (req , res)=>
+  app.post('/userDetails' , async (req , res)=>
   {
     try
     {
